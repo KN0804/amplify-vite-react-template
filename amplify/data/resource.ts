@@ -5,6 +5,11 @@ const schema = a.schema({
     .model({
       content: a.string(),
     }).authorization(allow => [allow.owner()]),
+  Note: a.model({
+    content: a.string(),
+    name: a.string(),
+    description: a.string()
+  }).authorization(allow => [allow.owner()]),
 });
 
 export type Schema = ClientSchema<typeof schema>;
